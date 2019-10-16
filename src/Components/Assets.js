@@ -8,15 +8,15 @@ class Assets extends React.Component {
     const {assets}= this.props;
     return (
       <div>
-        <Link to={`/entities`} className="charapter-link">
-          <button>click</button>
-        </Link>
         <ol>
           {assets.map(asset=>{ 
             return(
               <li key={asset.id}>
                 <AssetsItem asset={asset}>
                 </AssetsItem>
+                <Link to={`/asset-entities/${asset.id}`} >
+                <button>Entidades</button>
+                </Link>
               </li>
             )
           })}

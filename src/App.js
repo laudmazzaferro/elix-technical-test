@@ -56,10 +56,16 @@ class App extends  React.Component {
               return (
                 <Assets assets={this.state.assets}/>
               )}}/>
-            <Route exact path="/entities" render={() => {
-              return (
-                <Entities/>
-            )}}/>
+            <Route path="/asset-entities/:assetId" render={routerProps => {
+            return (
+              <Entities 
+                routerProps={routerProps}
+                entities={this.state.entities}
+                assets={this.state.assets}
+              />
+            
+            );
+          }}/>
           </Switch>
         </main>
 
