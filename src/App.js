@@ -4,7 +4,18 @@ import { Switch, Route } from 'react-router-dom';
 import Assets from './Components/Assets';
 import Entities from './Components/Entities';
 
-function App() {
+class App extends  React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      assets:[],
+      entities:[]
+    }
+    this.getAssets = this.getAssets.bind(this);
+    this.getEntities = this.getEntities.bind(this);
+  }
+
+  render(){
   return (
 
     <div className="App">
@@ -28,10 +39,11 @@ function App() {
         </Switch>
       </main>
       <footer>
-        
+
       </footer>
     </div>
   );
+  }
 }
 
 export default App;
