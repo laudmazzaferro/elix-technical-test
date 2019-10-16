@@ -9,6 +9,7 @@ class Assets extends React.Component{
                 <Link to={`/entities`} className="charapter-link">
                     <button>click</button>
               </Link>
+              
               <p>assets</p>
             </div>
         )

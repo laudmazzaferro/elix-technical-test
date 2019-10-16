@@ -3,6 +3,8 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 import Assets from './Components/Assets';
 import Entities from './Components/Entities';
+import { fetchAssets } from './services/fecthAssets';
+import { fetchEntities } from './services/fecthEntities';
 
 class App extends  React.Component {
   constructor(props){
@@ -14,35 +16,58 @@ class App extends  React.Component {
     this.getAssets = this.getAssets.bind(this);
     this.getEntities = this.getEntities.bind(this);
   }
+  componentDidMount(){
+    this.getAssets();
+    this.getEntities();
+  }
+
+  getAssets(){
+    fetchAssets()
+    .then(data=>{
+      this.setState({
+        assets:data.assets
+      })
+    })
+  }
+
+  getEntities(){
+    fetchEntities()
+    .then(data=>{
+      this.setState({
+        entities:data.entities
+      })
+    })
+  }
 
   render(){
-  return (
+    return (
 
-    <div className="App">
+      <div className="App">
 
-      <header className="App-header">
-        <p>
-          Elix technical test
-        </p>
-      </header>
+        <header className="App-header">
+          <p>
+            Elix technical test
+          </p>
+        </header>
 
-      <main>
-      <Switch>
-          <Route exact path="/" render={() => {
-            return (
-              <Assets/>
+        <main>
+          <Switch>
+            <Route exact path="/" render={() => {
+              return (
+                <Assets />
+              )}}/>
+            <Route exact path="/entities" render={() => {
+              return (
+                <Entities/>
             )}}/>
-          <Route exact path="/entities" render={() => {
-            return (
-              <Entities/>
-            )}}/>
-        </Switch>
-      </main>
-      <footer>
+          </Switch>
+        </main>
 
-      </footer>
-    </div>
-  );
+        <footer>
+
+        </footer>
+      </div>
+    );
   }
 }
 
