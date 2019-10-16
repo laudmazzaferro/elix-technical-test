@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Switch, Route } from 'react-router-dom';
+import Assets from './Components/Assets';
+import Entities from './Components/Entities';
 
 function App() {
   return (
+
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Elix technical test
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+
+      <main>
+      <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Assets/>
+            )}}/>
+          <Route exact path="/entities" render={() => {
+            return (
+              <Entities/>
+            )}}/>
+        </Switch>
+      </main>
+      <footer>
+        
+      </footer>
     </div>
   );
 }
