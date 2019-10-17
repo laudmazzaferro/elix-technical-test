@@ -12,25 +12,32 @@ const Entities = props => {
   if (entitiesDos[0]) {
    
   return (
-    <div>
+    <ul className="entities-container">
       {entitiesDos.map(item => {
         return(
-          <div>
-            <p onClick={menuCollapsible} id={item.id}>{item.id_asset}</p>
-            {/*<ContextMenu contextId={item.id}  items={[{label:item.t_entry_code , onClick:printCode}]} />*/}
-            <div className={`collapsible ${(parseInt(item.id) === parseInt(idCollap)) ? '' : 'hidden'}`}>
-              <button onClick={printCode} id={item.t_entry_code}>
-                Imprimir en consola
-              </button>
+          <li className="entities-item_list">
+            <div className="container-ent-item_list">
+              <div className="box-ent-item_list" onClick={menuCollapsible} id={item.id}>
+                <h2 className="title-ent-item_list" >Entry code:  {item.t_entry_code}  <i  className='fas fa-chevron-down'></i> 
+                </h2>
+                <p className="ent-area">Interior area: {item.n_entry_area_gross_interior} m2</p>
+                <p className="ent-tenant-name">Tenant name: {item.t_entry_tenant_name} </p>
+              </div>
+              {/*<ContextMenu contextId={item.id}  items={[{label:item.t_entry_code , onClick:printCode}]} />*/}
+              <div className={`collapsible ${(parseInt(item.id) === parseInt(idCollap)) ? '' : 'hidden'}`}>
+                <button className="btn-print" onClick={printCode} id={item.t_entry_code}>
+                Print on Console
+                </button>
+              </div>
             </div>
-          </div>
+          </li>
         )
       })}
       <Link to={`/`} className="charapter-link">
         <button>Volver</button>
       </Link>
-      <p>entities</p>
-    </div>
+  
+    </ul>
   )
   }else{
     return (
