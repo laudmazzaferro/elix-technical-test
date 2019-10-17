@@ -5,11 +5,10 @@ class AssetsItem extends React.Component {
   render() {
     const { asset } = this.props;
     return (
-      <div>
-         <h2 id={`${asset.t_street_name}`}>{asset.t_street_name}</h2>
-         <p>{asset.n_number}</p>
-         <p>{asset.t_city}</p>
-         <p>{asset.t_code}</p>
+      <div className="container-item_list">
+         <h2 className="title-item_list" id={`${asset.t_street_name}`}>{asset.t_street_name}, {asset.n_number}</h2>
+         <p className="city-item_list" >{asset.t_city}  <i class="fas fa-map-marker-alt"></i></p>
+         <p className="code-item_list" >{asset.t_code}</p>
       </div>
     )
   }

@@ -7,7 +7,7 @@ class Assets extends React.Component {
   render() {
     const {assets}= this.props;
     return (
-      <div>
+      <div className="assets-container">
         {/*<nav>
           <ol>
             {assets.map(asset=>{
@@ -17,14 +17,14 @@ class Assets extends React.Component {
             })}
           </ol>
           </nav>*/}
-        <ol>
+        <ol  className="assets-list">
           {assets.map(asset=>{ 
             return(
-              <li key={asset.id}>
+              <li className="assets-item_list" key={asset.id}>
                 <AssetsItem asset={asset}>
                 </AssetsItem>
                 <Link to={`/asset-entities/${asset.id}`} >
-                <button>Entidades</button>
+                <button className="asts-btn-to-enti">Entities</button>
                 </Link>
               </li>
             )

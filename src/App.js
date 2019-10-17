@@ -61,12 +61,12 @@ class App extends  React.Component {
       <div className="App">
 
         <header className="App-header">
-          <p>
+          <h1 className="App-header_tittle">
             Elix technical test
-          </p>
+          </h1>
         </header>
 
-        <main>
+        <main className="App-main">
           <Switch>
             <Route exact path="/" render={() => {
               return (
@@ -88,7 +88,7 @@ class App extends  React.Component {
           </Switch>
         </main>
 
-        <footer>
+        <footer className="App-footer">
 
         </footer>
       </div>
