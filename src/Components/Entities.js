@@ -9,21 +9,29 @@ const Entities = props => {
   const entitiesDos = entities.filter(item => item.id_asset === assetId );
     
   if (entitiesDos[0]) {
+   const {menuCollapsible}=this.props
   return (
     <div>
       {entitiesDos.map(item => {
         return(
-        <p>{item.id_asset}</p>
+          <div>
+            <p onClick={menuCollapsible}>{item.id_asset}</p>
+          </div>
         )
       })}
       <Link to={`/`} className="charapter-link">
-        <button>click</button>
+        <button>Volver</button>
       </Link>
       <p>entities</p>
     </div>
   )
   }else{
-
+    return (
+      <React.Fragment>
+        <p>Entidades no existentes</p>
+        <Link to="/" >Volver </Link>
+      </React.Fragment>
+    )
   }
 
 }
