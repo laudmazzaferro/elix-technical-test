@@ -1,0 +1,40 @@
+.entities-container{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.entities-list{
+  list-style: none;
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+  grid-gap: 20px;
+  //border: 1px solid #e6e6e6;
+  @media all and (min-width:600px) {
+    grid-template-columns: 250px 250px ; 
+  }
+  @media all and (min-width:800px) {
+    grid-template-columns: 250px  250px 250px; 
+  }
+  @media all and (min-width:1200px) {
+    grid-template-columns: 250px 250px 250px 250px; 
+  }
+}
+.container-ent-item_list{
+  position: relative;
+}
+.fa-chevron-down{
+  position: absolute;
+  right: 125px;
+  bottom: -25px;
+  transform: translateX(50%);
+}
+.entities-item_list{
+  border: solid 2px #666;
+}
+.ent-tenant-name{
+  margin-bottom: 30px;
+}
