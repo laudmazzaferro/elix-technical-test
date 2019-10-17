@@ -19,7 +19,7 @@ const Entities = props => {
             <p onClick={menuCollapsible} id={item.id}>{item.id_asset}</p>
             {/*<ContextMenu contextId={item.id}  items={[{label:item.t_entry_code , onClick:printCode}]} />*/}
             <div className={`collapsible ${(parseInt(item.id) === parseInt(idCollap)) ? '' : 'hidden'}`}>
-              <button onMouseDown={printCode} id={item.t_entry_code}>
+              <button onClick={printCode} id={item.t_entry_code}>
                 Imprimir en consola
               </button>
             </div>

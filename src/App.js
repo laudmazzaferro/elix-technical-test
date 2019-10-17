@@ -49,7 +49,10 @@ class App extends  React.Component {
   }
   
   printCode(event){
-    console.log(event.currentTarget.id)
+    console.log(event.currentTarget.id);
+    this.setState({
+      idCollap:''
+    })
   }
 
   render(){
