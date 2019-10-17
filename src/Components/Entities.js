@@ -1,6 +1,7 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+//import ContextMenu from 'react-context-menu';
 
 
 const Entities = props => {
@@ -16,8 +17,9 @@ const Entities = props => {
         return(
           <div>
             <p onClick={menuCollapsible} id={item.id}>{item.id_asset}</p>
+            {/*<ContextMenu contextId={item.id}  items={[{label:item.t_entry_code , onClick:printCode}]} />*/}
             <div className={`collapsible ${(parseInt(item.id) === parseInt(idCollap)) ? '' : 'hidden'}`}>
-              <button onClick={printCode} id={item.t_entry_code}>
+              <button onMouseDown={printCode} id={item.t_entry_code}>
                 Imprimir en consola
               </button>
             </div>

@@ -8,6 +8,15 @@ class Assets extends React.Component {
     const {assets}= this.props;
     return (
       <div>
+        {/*<nav>
+          <ol>
+            {assets.map(asset=>{
+              return(
+                <li><a href={`http://localhost:3000/#${asset.t_street_name}`}>{asset.t_street_name}</a></li>
+              ) 
+            })}
+          </ol>
+          </nav>*/}
         <ol>
           {assets.map(asset=>{ 
             return(

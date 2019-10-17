@@ -6,7 +6,7 @@ class AssetsItem extends React.Component {
     const { asset } = this.props;
     return (
       <div>
-         <h2>{asset.t_street_name}</h2>
+         <h2 id={`${asset.t_street_name}`}>{asset.t_street_name}</h2>
          <p>{asset.n_number}</p>
          <p>{asset.t_city}</p>
          <p>{asset.t_code}</p>
