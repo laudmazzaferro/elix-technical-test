@@ -11,10 +11,13 @@ class App extends  React.Component {
     super(props);
     this.state={
       assets:[],
-      entities:[]
+      entities:[],
+      idCollap:''
     }
     this.getAssets = this.getAssets.bind(this);
     this.getEntities = this.getEntities.bind(this);
+    this.menuCollapsible =this.menuCollapsible.bind(this);
+    this.printCode =this.printCode.bind(this);
   }
   componentDidMount(){
     this.getAssets();
@@ -37,6 +40,16 @@ class App extends  React.Component {
         entities:data.entities
       })
     })
+  }
+  menuCollapsible(event){
+    const newId = event.currentTarget.id;
+    this.setState({
+      idCollap:newId
+    })
+  }
+  
+  printCode(event){
+    console.log(event.currentTarget.id)
   }
 
   render(){
@@ -62,6 +75,9 @@ class App extends  React.Component {
                 routerProps={routerProps}
                 entities={this.state.entities}
                 assets={this.state.assets}
+                menuCollapsible ={this.menuCollapsible}
+                idCollap={this.state.idCollap}
+                printCode={this.printCode}
               />
             
             );
