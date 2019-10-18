@@ -8,8 +8,11 @@
   text-align: center;
   font-family: 'Overpass', sans-serif;
 }
+.App-main{
+  min-width: 300px;
+}
 .App-header {
-  background-color: #373f44;
+  background-color:grey;
   //min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,4 +30,18 @@
 
 .hidden{
   display: none;
+}
+.App-header_tittle{
+    background-image: url('./../images/logo-elix.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height:1px;
+    padding-top:150px;
+    overflow:hidden;
+    margin: 0px auto 20px auto ;
+    width: 300px;
+    @media all and (min-width:768px) {
+        width:400px; 
+    }
 }

@@ -12,7 +12,6 @@
   grid-template-columns: auto;
   text-align: center;
   grid-gap: 20px;
-  //border: 1px solid #e6e6e6;
   @media all and (min-width:600px) {
     grid-template-columns: 250px 250px ; 
   }
@@ -33,10 +32,14 @@
  font-family: 'Overpass', sans-serif;
  color: white;
  border:none;
- background:#373f44;
+ background:#ff6666;
  border-radius: 5px;
  margin-bottom: 10px;
  &:hover {
-  background:#ff6666;
+  background:#373f44;
 }
+}
+
+.assets-main-title{
+  color:#ff6666;
 }

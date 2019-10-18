@@ -38,3 +38,29 @@
 .ent-tenant-name{
   margin-bottom: 30px;
 }
+
+.btn-print{
+  width: 100px;
+ font-family: 'Overpass', sans-serif;
+ color: white;
+ border:none;
+ background:#ff6666;
+ border-radius: 5px;
+ margin-bottom: 10px;
+ &:hover {
+  background:#373f44;
+  }
+}
+.assets-link{
+ margin-top: 20px;
+ width: 100px;
+ font-family: 'Overpass', sans-serif;
+ color: white;
+ border:none;
+ background:#ff6666;
+ border-radius: 5px;
+ margin-bottom: 10px;
+ &:hover {
+  background:#373f44;
+  }
+}

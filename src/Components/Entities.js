@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 //import ContextMenu from 'react-context-menu';
 
@@ -13,11 +13,16 @@ const Entities = props => {
 
     return (
       <React.Fragment>
+        <Link to={`/`} >
+          <button className="assets-link">
+            Return 
+          </button>
+        </Link>
         <div className="entities-container">
           <ul className="entities-list">
             {entitiesDos.map(item => {
               return (
-                <li className="entities-item_list">
+                <li className="entities-item_list" key={item.id}>
                   <div className="container-ent-item_list">
                     <div className="box-ent-item_list" onClick={menuCollapsible} id={item.id}>
                       <h2 className="title-ent-item_list" >Entry code:  {item.t_entry_code}  <i className={`fas fa-chevron-down ${(parseInt(item.id) === parseInt(idCollap)) ? 'hidden' : ''}`}></i>
@@ -29,7 +34,7 @@ const Entities = props => {
                     <div className={`collapsible ${(parseInt(item.id) === parseInt(idCollap)) ? '' : 'hidden'}`}>
                       <button className="btn-print" onClick={printCode} id={item.t_entry_code}>
                         Print on Console
-                </button>
+                      </button>
                     </div>
                   </div>
                 </li>
@@ -37,20 +42,29 @@ const Entities = props => {
             })}
           </ul>
         </div>
-        <Link to={`/`} className="charapter-link">
-          <button>Return</button>
-        </Link>
+        
       </React.Fragment>
     )
   } else {
     return (
       <React.Fragment>
         <p>Entidades no existentes</p>
-        <Link to="/" >Return </Link>
+        <Link to="/" >
+          <button className="assets-link">
+            Return 
+          </button>
+        </Link>
       </React.Fragment>
     )
   }
 
 }
+
+Entities.propTypes = {
+  entities: PropTypes.arrayOf(PropTypes.object).isRequired,
+  menuCollapsible:PropTypes.func.isRequired,
+  idCollap:PropTypes.string.isRequired,
+  printCode:PropTypes.func.isRequired
+};
 
 export default Entities;
